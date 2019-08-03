@@ -1,7 +1,7 @@
 import os
 from codecs import open
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -13,7 +13,7 @@ install_requires = ['thrift == 0.11.0',
                     'sqlalchemy >= 1.3',
                     'numpy >= 1.16',
                     'pandas >= 0.24',
-                    'pyarrow >= 0.10.0,<0.14',
+                    'pyarrow >= 0.12.0,<0.14',
                     'packaging >= 19.0']
 
 # Optional Requirements
@@ -40,8 +40,8 @@ setup(
     long_description=long_description,
     url='https://github.com/omnisci/pymapd',
 
-    author='Tom Augspurger',
-    author_email='taugspurger@continuum.io',
+    author='OmniSci',
+    author_email='community@omnisci.com',
 
     license='Apache Software License',
 
@@ -57,8 +57,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3 :: Only',
     ],
-    packages=['pymapd', 'mapd', 'common', 'completion_hints',
-              'serialized_result_set'],
+    packages=find_packages(),
     use_scm_version=True,
     setup_requires=['setuptools_scm'],
     install_requires=install_requires,
